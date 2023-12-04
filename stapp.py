@@ -63,14 +63,8 @@ if st.button("Send"):
         elif role == "system":
             st.text(content)
 
-# Function to interact with the GPT-3.5 model for testing
-def chat_with_bot(messages):
-    # Make a request to the OpenAI Chat API
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages=messages,
-        temperature=0.5,
-        max_tokens=120
-    )
-    # Extract and return the assistant's response from the API response
-    return response['choices'][0]['message']['content']
+# Welcome message
+st.text("Hi, I am Yana, a text-based AI assistant that will act as your supportive system to the end.")
+
+# Start the conversation by calling the function
+start_chat()
